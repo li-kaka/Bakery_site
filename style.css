@@ -1,0 +1,1024 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --bg-dark: #2b2118;
+    --text-gold: #c5a47e;
+    --white: #ffffff;
+}
+
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1510;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+
+.loading-content {
+    text-align: center;
+}
+
+
+.loading-logo {
+    width: 200px;
+    height: auto;
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+
+.loading-bar {
+    width: 100px;
+    height: 2px;
+    background-color: var(--text-gold);
+    margin: 20px auto 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bar::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    animation: loading-line 2s infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+@keyframes loading-line {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+
+#loading-screen.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.bg-blur-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('image/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px) brightness(1);
+    z-index: -2;
+    opacity: 1;
+    pointer-events: none;
+}
+
+
+.fixed-background {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 100vh;
+    background-image: url('image/hero-bg.jpg');
+    background-size: 100% auto;
+    background-position: center -130px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+
+.main-header {
+    background: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #1a1510 0%, transparent 20%, transparent 80%, #1a1510 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero-center-text {
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.hero-bottom-logo {
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+}
+
+.hero-bottom-logo img {
+    width: 350px;
+    height: auto;
+}
+
+
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(60, 54, 48, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.header-top-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    box-sizing: border-box;
+}
+
+
+.header-left p {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #fff;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.logo1-img {
+    height: 50px;
+}
+
+
+.header-right {
+    display: flex;
+    gap: 12px;
+    margin-right: 10px;
+}
+
+.sns-icon {
+    width: 30px;
+    filter: invert(1);
+}
+
+
+.hero-content-wrapper {
+    width: 65%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-center-group {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-slogan-area {
+    margin-top: 15vh;
+    text-align: center;
+}
+
+.hero-slogan {
+    color: #fff;
+    letter-spacing: 0.4em;
+    font-size: 1.1rem;
+}
+
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(60, 54, 48, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 20;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.nav-bar li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-bar a:hover {
+    color: var(--text-gold);
+}
+
+
+.nav-bar:hover {
+    background-color: rgba(60, 54, 48, 0.7);
+}
+
+
+.hero-bottom-logo {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+}
+
+/* Logo 2 定位在左側 */
+.logo2-container {
+    position: absolute;
+    left: 20px;
+    bottom: 120px;
+    /* 位於導覽列上方，依照麵包位置調整 */
+}
+
+.logo2-img {
+    width: 250px;
+    /* 依照需求縮放 */
+}
+
+.header-center a,
+.logo2-container a {
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+body {
+    background-color: #1a1510;
+    color: var(--white);
+    font-family: 'Noto Serif JP', serif;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(60, 54, 48, 0.7);
+    transition: background-color 0.3s;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 18px 0;
+    list-style: none;
+}
+
+.nav-bar li {
+    margin: 0 40px;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    padding: 10px 0;
+    display: inline-block;
+    transition: all 0.3s ease;
+    /* 平滑過渡 */
+    position: relative;
+    /* 為了製作底線效果 */
+}
+
+/* 單個選項的 Hover 效果：改變文字顏色並增加發光感 */
+.nav-bar a:hover {
+    color: var(--text-gold);
+    /* 變為金色，呼應整體設計 */
+    text-shadow: 0 0 8px rgba(197, 164, 126, 0.5);
+}
+
+/* 選配：增加一個精緻的底線動態效果 */
+.nav-bar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-bar a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+
+/* NEWS 區塊大背景容器 */
+.news-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Flexbox 水平居中 */
+    align-items: center;
+    margin-top: 80px;
+    box-sizing: border-box;
+}
+
+.news-section-bg {
+    /* 核心修改：寬度與背景圖 65% 同步 */
+    width: 65%;
+
+    /* 增加這行：確保在所有情況下都能自動置中 */
+    margin: 0 auto;
+
+    /* 你設定的顏色與透明度 */
+    background-color: rgba(65, 56, 42, 0.5);
+    padding: 60px 40px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+}
+
+.news-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --- 統一標題樣式 --- */
+/* --- 統一標題樣式 --- */
+.section-title {
+    color: #fff !important;
+    text-align: center !important;
+    font-size: 2rem !important;
+    letter-spacing: 0.4em !important;
+
+    /* 增加內距：讓文字與底線、上方容器邊緣拉開距離 */
+    /* 上 40px, 左右 0, 下 20px */
+    padding: 120px 0 10px 0 !important;
+
+    /* 增加標題與下方內容（卡片/餐點）的距離 */
+    margin-bottom: 100px !important;
+
+    border-bottom: 1px solid #fff !important;
+    display: table !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative !important;
+}
+
+/* 三欄網格佈局 */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* 卡片之間的間距 */
+    padding: 0 60px;
+}
+
+/* 新聞卡片主體 */
+.news-card {
+    background-color: #ffffff;
+    /* 可以設定最大寬度限制卡片大小 */
+    max-width: 300px;
+    margin: 0 auto;
+    /* 卡片在格線內置中 */
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    /* 懸停時稍微上升 */
+}
+
+/* 圖片容器 */
+.news-img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 文字內容區域 */
+.news-info {
+    padding: 20px;
+    color: #535353;
+    /* 你指定的文字顏色 */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* 確保卡片高度一致 */
+}
+
+/* 說明文字：置中 */
+.news-caption {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* 日期：左下角 */
+.news-date {
+    font-size: 0.8rem;
+    margin-top: auto;
+    /* 將日期推向底部 */
+    text-align: left;
+    color: #888;
+}
+
+/* Read More 按鈕 */
+.news-footer {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.read-more-btn {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 8px 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+    background-color: #fff;
+    color: #41382A;
+}
+
+
+/* MENU 區塊標題 */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 0.3em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+/* MENU 區塊外層容器 */
+.menu-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* 確保 Menu 標題在容器內也有足夠空間 */
+.menu-section .section-title {
+    padding-top: 20px !important;
+    margin-bottom: 100px !important;
+}
+
+.menu-section-bg {
+    width: 65%;
+    /* 保持與背景圖同步 */
+    /* 核心修改：使用品牌深褐色 #1a1510 (26, 21, 16) 並設定 0.7 透明度 */
+    background-color: rgba(26, 21, 16, 0.5);
+    /* 調整內距：確保內容不會貼邊，左右增加到 120px 讓內容更向中心靠攏 */
+    padding: 80px 120px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* 單個菜單項目 */
+.menu-item {
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    gap: 60px;
+    /* 圖文之間的間距 */
+    margin-bottom: 80px;
+    /* 項目之間的上下間距 */
+}
+
+/* 核心：達成左右交錯排列 */
+.menu-item.reverse {
+    flex-direction: row-reverse;
+}
+
+/* 圖片統一尺寸設定 */
+.menu-image {
+    flex: 1;
+}
+
+.menu-image img {
+    width: 100%;
+    /* 核心修改：設定 3:2 比例 */
+    aspect-ratio: 3 / 2;
+    /* 使用 cover 會填滿框架但可能切掉邊緣；
+       如果你絕對不想切到圖片任何部分，請改用 contain，
+       但 contain 可能會在比例不合時產生留白。
+    */
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+
+
+/* 項目名稱 (較大字體) */
+.menu-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    /* 保持設計稿的大字體 */
+}
+
+/* 價格 */
+.menu-info .price {
+    color: var(--text-gold);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+
+/* 描述文字 (較小字體) */
+.menu-info .menu-desc {
+    font-size: 1rem;
+    /* 較小的文字 */
+    line-height: 1.8;
+    color: #f0f0f0;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+    /* 1秒的平滑過渡 */
+}
+
+/* 動畫觸發狀態：變回不透明且回到原位 */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 如果你希望 NEWS 區塊內的卡片有先後順序，可以增加一點延遲 */
+.news-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.news-card:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+/* --- ADDRESS 區塊 --- */
+.address-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    /* 與 Footer 保持距離 */
+}
+
+.address-section-bg {
+    width: 65%;
+    background-color: rgba(26, 21, 16, 0.25);
+    /* 同 MENU 的 0.7 透明度 */
+    padding: 80px 100px;
+    box-sizing: border-box;
+    text-align: center;
+    /* 內容全部置中 */
+}
+
+/* Slogan 樣式與間距 */
+.address-slogan {
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    letter-spacing: 0.15em;
+    margin-bottom: 50px;
+    /* 標題下方的 Padding */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 詳細地址資訊樣式與間距 */
+.address-details {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 2;
+    /* 增加行高讓資訊更易讀 */
+    margin-bottom: 50px;
+    /* 地圖上方的 Padding */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.address-details p {
+    margin: 5px 0;
+}
+
+/* 地圖包裝容器 */
+.map-wrap {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    /* 核心修改：設定四個角統一的圓角 */
+    border-radius: 20px;
+
+    /* 關鍵：強制裁切掉內部 iframe 的直角 */
+    overflow: hidden;
+
+    /* 增加陰影讓地圖更有立體感 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    /* 讓地圖色調沉穩 */
+    filter: grayscale(0.3) contrast(1.1);
+
+    /* 修正某些瀏覽器在 overflow 上的渲染問題 */
+    backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* 確保內部的 iframe 撐滿容器 */
+.map-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 400px;
+    border: none;
+    /* 核心修改：讓地圖變暗並降低飽和度 */
+    filter: brightness(0.6) contrast(1.2) saturate(0.7) grayscale(0.2);
+
+    /* 滑鼠懸停時恢復亮度（可選，增加互動感） */
+    transition: filter 0.3s ease;
+}
+
+.map-wrap:hover iframe {
+    filter: brightness(0.9) contrast(1.1) saturate(0.8);
+}
+
+
+/* --- FOOTER 樣式 --- */
+.main-footer {
+    width: 100%;
+    background-color: transparent;
+    /* 背景透明以顯示模糊底圖 */
+    padding: 60px 0 40px;
+    color: #fff;
+}
+
+.footer-inner {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.footer-left p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    margin-left: 60px;
+}
+
+.footer-sns {
+    display: flex;
+    gap: 15px;
+    margin-left: 60px;
+}
+
+.footer-sns img {
+    width: 25px;
+    filter: invert(1);
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-logo-img {
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+.copyright {
+    font-size: 0.7rem;
+    color: #aaa;
+}
+
+.footer-right {
+    text-align: right;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-right: 60px;
+}
+
+/* Logo 互動動畫 */
+.logo1-img,
+.logo2-img,
+.footer-logo-img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo1-img:hover,
+.logo2-img:hover,
+.footer-logo-img:hover {
+    transform: scale(1.05);
+    /* 輕微放大 */
+    opacity: 0.8;
+    /* 輕微透明 */
+}
+
+/* 移除連結預設底線（針對包住 Logo 的 a 標籤） */
+.header-center a,
+.logo2-container a,
+.footer-center a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 當螢幕寬度小於 1024px 時 (平板與小筆電) */
+@media (max-width: 1024px) {
+
+    .fixed-background,
+    .hero-content-wrapper,
+    .news-section-bg,
+    .menu-section-bg,
+    .address-section-bg,
+    .footer-inner {
+        width: 90% !important;
+        /* 放寬容器，避免內容被擠壓 */
+    }
+
+    .menu-section-bg,
+    .address-section-bg {
+        padding: 60px 40px !important;
+        /* 減少左右 Padding */
+    }
+}
+
+/* 當螢幕寬度小於 768px 時 (手機版) */
+@media (max-width: 768px) {
+
+    /* --- NEWS: 三欄變一欄 --- */
+    .news-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 20px !important;
+    }
+
+    /* --- MENU: 左右交錯變垂直排列 --- */
+    .menu-item,
+    .menu-item.reverse {
+        flex-direction: column !important;
+        /* 圖片在上，文字在下 */
+        text-align: center !important;
+        gap: 20px !important;
+    }
+
+    .menu-item.reverse .menu-info {
+        text-align: center !important;
+        /* 手機版統一居中對齊 */
+    }
+
+    .menu-image img {
+        max-width: 100% !important;
+    }
+
+    /* ---導航列優化 --- */
+    .nav-bar ul {
+        flex-wrap: wrap;
+        /* 讓選單在空間不足時自動換行 */
+        padding: 10px 0 !important;
+    }
+
+    .nav-bar li {
+        margin: 5px 10px !important;
+    }
+
+    /* --- Header 頂部調整 --- */
+    .header-top-inner {
+        flex-direction: column !important;
+        padding: 20px !important;
+        gap: 15px;
+    }
+}
+
+/* Logo 點擊縮放動畫 */
+.logo1-img,
+.logo2-img,
+.footer-logo-img {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo1-img:active,
+.logo2-img:active,
+.footer-logo-img:active {
+    transform: scale(0.92);
+    /* 按下時微縮，模擬實體按鈕感 */
+}
+
+\\
+
+/* News Marquee Container */
+.news-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    /* Mask out cards that go off-screen */
+    padding: 20px 0;
+    position: relative;
+}
+
+/* The sliding track */
+.news-marquee-track {
+    display: flex;
+    width: calc(300px * 6 + 20px * 6);
+    /* (Card width * Total cards) + (Gap * Total cards) */
+    gap: 20px;
+    animation: marquee 20s linear infinite;
+}
+
+/* Individual Card adjustment */
+.news-marquee-track .news-card {
+    flex-shrink: 0;
+    /* Prevent cards from squishing */
+    width: 300px;
+    background-color: #fff;
+}
+
+/* Pause animation on hover */
+.news-marquee-container:hover .news-marquee-track {
+    animation-play-state: paused;
+}
+
+/* Marquee Animation logic */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Move exactly half of the total width (the first set of cards) */
+        transform: translateX(-50%);
+    }
+}
+
+/* Add a fade effect to the edges (optional but high-end) */
+.news-marquee-container::before,
+.news-marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.news-marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(65, 56, 42, 0.8), transparent);
+}
+
+.news-marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(65, 56, 42, 0.8), transparent);
+}
+
+/* News Marquee Container */
+.news-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    /* Mask out cards that go off-screen */
+    padding: 20px 0;
+    position: relative;
+}
+
+/* The sliding track */
+.news-marquee-track {
+    display: flex;
+    width: calc(300px * 6 + 20px * 6);
+    /* (Card width * Total cards) + (Gap * Total cards) */
+    gap: 20px;
+    animation: marquee 40s linear infinite;
+}
+
+/* Individual Card adjustment */
+.news-marquee-track .news-card {
+    flex-shrink: 0;
+    /* Prevent cards from squishing */
+    width: 300px;
+    background-color: #fff;
+}
+
+/* Pause animation on hover */
+.news-marquee-container:hover .news-marquee-track {
+    animation-play-state: paused;
+}
+
+/* Marquee Animation logic */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Move exactly half of the total width (the first set of cards) */
+        transform: translateX(-50%);
+    }
+}
+
+/* Add a fade effect to the edges (optional but high-end) */
+.news-marquee-container::before,
+.news-marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.news-marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(65, 56, 42, 0.8), transparent);
+}
+
+.news-marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(65, 56, 42, 0.8), transparent);
+}
