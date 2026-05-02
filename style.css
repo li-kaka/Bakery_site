@@ -891,8 +891,6 @@ body {
     /* 按下時微縮，模擬實體按鈕感 */
 }
 
-\\
-
 /* News Marquee Container */
 .news-marquee-container {
     width: 100%;
@@ -956,6 +954,331 @@ body {
 .news-marquee-container::after {
     right: 0;
     background: linear-gradient(to left, rgba(65, 56, 42, 0.8), transparent);
+}
+
+/* --- Responsive repair layer --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1200px) {
+
+    .fixed-background,
+    .hero-content-wrapper,
+    .news-section-bg,
+    .menu-section-bg,
+    .address-section-bg,
+    .footer-inner {
+        width: min(90%, 980px) !important;
+    }
+
+    .menu-section-bg,
+    .address-section-bg {
+        padding-left: clamp(32px, 5vw, 72px) !important;
+        padding-right: clamp(32px, 5vw, 72px) !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .bg-blur-layer {
+        filter: blur(12px) brightness(0.8);
+    }
+
+    .fixed-background {
+        width: 100% !important;
+        background-size: cover;
+        background-position: center top;
+        background-attachment: scroll;
+    }
+
+    .hero {
+        min-height: 100svh;
+        height: auto;
+    }
+
+    .hero::before {
+        background: linear-gradient(to bottom, rgba(26, 21, 16, 0.75), rgba(26, 21, 16, 0.2) 45%, rgba(26, 21, 16, 0.85));
+    }
+
+    .hero-content-wrapper {
+        width: 100% !important;
+        min-height: 100svh;
+        height: auto;
+        padding: 0 18px 82px;
+    }
+
+    .header-top-inner {
+        width: 100%;
+        flex-direction: row !important;
+        align-items: flex-start;
+        padding: 18px 0 !important;
+        gap: 12px;
+    }
+
+    .header-left {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .header-left p {
+        margin: 0;
+        font-size: 0.72rem;
+        line-height: 1.55;
+        letter-spacing: 0.02em;
+    }
+
+    .header-left p:first-child {
+        white-space: nowrap;
+    }
+
+    .logo1-img {
+        height: 38px;
+    }
+
+    .header-right {
+        gap: 8px;
+        margin-right: 0;
+    }
+
+    .sns-icon {
+        width: 22px;
+    }
+
+    .hero-slogan-area {
+        margin-top: 20vh;
+        padding: 0 18px;
+    }
+
+    .hero-slogan {
+        font-size: clamp(0.82rem, 3.6vw, 1rem);
+        letter-spacing: 0.16em;
+        line-height: 2;
+    }
+
+    .logo2-container {
+        left: 18px;
+        bottom: 98px;
+        width: min(24vw, 95px);
+        transform: none;
+        text-align: left;
+    }
+
+    .logo2-img {
+        width: 100%;
+    }
+
+    .nav-bar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .nav-bar ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        padding: 10px 8px !important;
+    }
+
+    .nav-bar li {
+        justify-content: center;
+        margin: 0 !important;
+    }
+
+    .nav-bar a {
+        width: 100%;
+        padding: 8px 2px;
+        text-align: center;
+        font-size: clamp(0.68rem, 2.8vw, 0.82rem);
+        letter-spacing: 0.12em;
+    }
+
+    .section-title {
+        font-size: clamp(1.35rem, 7vw, 1.8rem) !important;
+        letter-spacing: 0.24em !important;
+        padding: 72px 0 8px 0 !important;
+        margin-bottom: 42px !important;
+    }
+
+    .news-section-bg,
+    .menu-section-bg,
+    .address-section-bg {
+        width: 100% !important;
+        padding: 44px 18px !important;
+    }
+
+    .news-marquee-container {
+        padding: 4px 0 18px;
+    }
+
+    .news-marquee-track {
+        width: auto;
+        gap: 14px;
+    }
+
+    .news-marquee-track .news-card {
+        width: min(78vw, 290px);
+    }
+
+    .news-info {
+        padding: 16px;
+    }
+
+    .news-caption {
+        font-size: 0.82rem;
+        line-height: 1.7;
+    }
+
+    .news-marquee-container::before,
+    .news-marquee-container::after {
+        width: 36px;
+    }
+
+    .news-footer {
+        text-align: center;
+    }
+
+    .read-more-btn {
+        display: inline-flex;
+        justify-content: center;
+        min-width: 150px;
+    }
+
+    .menu-item,
+    .menu-item.reverse {
+        gap: 22px !important;
+        margin-bottom: 58px;
+    }
+
+    .menu-image,
+    .menu-info {
+        width: 100%;
+    }
+
+    .menu-info h3 {
+        font-size: clamp(1.15rem, 5vw, 1.35rem);
+        line-height: 1.55;
+    }
+
+    .menu-info .price {
+        font-size: 1.08rem;
+        margin: 6px 0 12px;
+    }
+
+    .menu-info .menu-desc {
+        font-size: 0.88rem;
+        line-height: 1.8;
+    }
+
+    .address-section {
+        margin-top: 24px;
+        margin-bottom: 48px;
+    }
+
+    .address-slogan {
+        font-size: 0.98rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 30px;
+    }
+
+    .address-details {
+        font-size: 0.86rem;
+        line-height: 1.85;
+        margin-bottom: 32px;
+    }
+
+    .map-wrap {
+        border-radius: 8px;
+    }
+
+    .map-wrap iframe {
+        height: 300px;
+    }
+
+    .main-footer {
+        padding: 42px 0 28px;
+    }
+
+    .footer-inner {
+        width: 100% !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding: 0 18px;
+        text-align: center;
+    }
+
+    .footer-left p,
+    .footer-sns,
+    .footer-right {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 430px) {
+
+    .header-top-inner {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .header-center {
+        flex: 0 0 auto;
+        order: 0;
+    }
+
+    .header-left {
+        flex: 1;
+        order: 1;
+    }
+
+    .header-left p {
+        font-size: 0.62rem;
+        line-height: 1.5;
+    }
+
+    .logo1-img {
+        height: 30px;
+    }
+
+    .hero-slogan-area {
+        margin-top: 24vh;
+    }
+
+    .nav-bar ul {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 4px;
+    }
+
+    .logo2-container {
+        left: 18px;
+        bottom: 112px;
+        width: min(25vw, 88px);
+    }
+
+    .section-title {
+        padding-top: 56px !important;
+        margin-bottom: 34px !important;
+    }
 }
 
 /* News Marquee Container */
