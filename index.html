@@ -29,6 +29,12 @@
                     <p>東京都渋谷区猿楽町29-18</p>
                     <p>営業時間 10:00～20:00</p>
                 </div>
+                <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="header-center">
                     <a href="#home">
                         <img src="image/HEADER_LOGO.png" alt="Logo 1" class="logo1-img">
@@ -39,6 +45,12 @@
                     <a href="#"><img src="image/facebook.png" class="sns-icon"></a>
                     <a href="#"><img src="image/instagram.png" class="sns-icon"></a>
                 </div>
+                <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+                    <a href="#home">HOME</a>
+                    <a href="#news">NEWS</a>
+                    <a href="#menu">MENU</a>
+                    <a href="#address">ADDRESS</a>
+                </nav>
             </div>
 
             <div class="hero-slogan-area">
@@ -300,6 +312,28 @@
                 }
             });
         });
+
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                mobileMenuToggle.setAttribute('aria-expanded', String(!isOpen));
+                mobileMenuToggle.classList.toggle('is-open', !isOpen);
+                mobileMenu.classList.toggle('is-open', !isOpen);
+                document.body.classList.toggle('mobile-menu-open', !isOpen);
+            });
+
+            mobileMenu.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenuToggle.classList.remove('is-open');
+                    mobileMenu.classList.remove('is-open');
+                    document.body.classList.remove('mobile-menu-open');
+                });
+            });
+        }
     </script>
 
 </body>
